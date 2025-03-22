@@ -2,7 +2,7 @@
 </script>
 <template>
   <div>
-    <h1>Starting component</h1>
+    <h1 class="m-6 text-6xl text-center">Starting component</h1>
 </div>
 
 </template>
