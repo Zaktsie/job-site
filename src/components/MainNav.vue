@@ -2,8 +2,14 @@
   <header class="w-full text-sm">
     <div class="fixed top-0 left-0 h-16 w-full bg-white">
       <div class="flex flex-nowrap h-full border-b border-solid border-brand-gray-1 px-8 mx-0">
-        <a href="/"  class="flex h-full items-center text-xl">{{companyName}}</a>
-        <h2 class="ml-8 flex h-full items-center"> Developed by {{developerName}}</h2>
+        <a :href="url"  class="flex h-full items-center text-xl">{{companyName}}</a>
+        <nav class="ml-12  h-full">
+          <ul class="flex h-full list-none">
+            <li class="h-full ml-9 first:ml-0" v-for="item in menuItems" :key="item">
+              <a href="#" class="flex h-full items-center py-2.5">{{item}}</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </header>
@@ -15,7 +21,14 @@ export default {
   data() {
     return {
       companyName: "Google Careers",
-      developerName: "Zak Tsienyane",
+      url: "https://www.google.com/about/careers/applications/",
+      menuItems: [
+          "Teams",
+          "Jobs",
+          "Location",
+          "Benefits",
+          "Students",
+      ],
 
     }
   }
