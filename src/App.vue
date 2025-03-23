@@ -4,8 +4,6 @@ import MainNav from "./components/MainNav.vue";
 <template>
   <MainNav />
 </template>
-
-
 <script>
 import MainNav from "./components/MainNav.vue";
 
