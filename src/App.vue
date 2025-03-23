@@ -1,11 +1,22 @@
 <script setup>
+import MainNav from "./components/MainNav.vue";
 </script>
 <template>
-  <div>
-    <h1 class="m-6 text-6xl text-center">Starting component</h1>
-</div>
-
+  <MainNav />
 </template>
+
+
+<script>
+import MainNav from "./components/MainNav.vue";
+
+export default {
+  name: "App",
+  components: {
+    MainNav,
+  },
+};
+
+</script>
 
 <style scoped>
  h1 {
