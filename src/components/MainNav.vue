@@ -12,7 +12,7 @@
         </nav>
         <div class="ml-auto flex h-full items-center">
           <ProfileImage v-if="loggedIn" />
-          <ActionButton v-else text="Sign In" @click="loginUser"  />
+          <ActionButton v-else actionBtnText="Sign in " @click="loginUser()"  />
 
         </div>
       </div>
@@ -21,7 +21,6 @@
 </template>
 
 <script>
-
 import ActionButton from "@/components/ActionButton.vue";
 import ProfileImage from "@/components/ProfileImage.vue";
 
