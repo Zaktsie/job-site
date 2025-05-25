@@ -15,5 +15,10 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 export default {
   name: "TheSubnav",
   components: { FontAwesomeIcon },
+  data() {
+    return {
+      onJobResultsPage: true,
+    };
+  },
 };
 </script>
