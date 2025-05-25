@@ -1,29 +1,29 @@
-import { defineConfig } from "eslint/config";
+import eslint from "@eslint/js";
+import eslintConfigPrettier from "eslint-config-prettier";
+import eslintPluginVue from "eslint-plugin-vue";
 import globals from "globals";
-import js from "@eslint/js";
-import pluginVue from "eslint-plugin-vue";
-import prettierConfig from "@vue/eslint-config-prettier";
+import typescriptEslint from "typescript-eslint";
 
-export default defineConfig([
-  // Base rules for files
-  { files: ["**/*.{js,mjs,cjs,vue}"], languageOptions: { ecmaVersion: "latest", globals: globals.browser } },
-
-  // Rules for Vue files
+export default typescriptEslint.config(
+  { ignores: ["*.d.ts", "**/coverage", "**/dist"] },
   {
-    files: ["**/*.{vue,js,mjs,cjs}"],
-    plugins: { vue: pluginVue },
-    languageOptions: { parser: "vue-eslint-parser", parserOptions: { ecmaVersion: "latest" } },
-    extends: ["plugin:vue/vue3-recommended", "eslint:recommended", prettierConfig],
+    extends: [
+      eslint.configs.recommended,
+      ...typescriptEslint.configs.recommended,
+      ...eslintPluginVue.configs["flat/recommended"],
+    ],
+    files: ["**/*.{ts,vue}"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: globals.browser,
+      parserOptions: {
+        parser: typescriptEslint.parser,
+      },
+    },
+    rules: {
+      // your rules
+    },
   },
-
-  // Rules for JavaScript files using CommonJS
-  {
-    files: ["**/*.js"],
-    languageOptions: { sourceType: "commonjs" },
-    plugins: { js },
-    extends: ["js/recommended"],
-  },
-
-  // Additional settings for Prettier integration
-  prettierConfig,
-]);
+  eslintConfigPrettier,
+);
