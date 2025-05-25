@@ -15,6 +15,9 @@ export default {
       type: String,
       default: "primary",
       required: false,
+      validator(value) {
+        return ["primary", "secondary"].includes(value);
+      },
     },
   },
   computed: {

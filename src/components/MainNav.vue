@@ -21,8 +21,7 @@
         <div class="ml-auto flex h-full items-center">
           <ProfileImage v-if="loggedIn" />
           <ActionButton
-            v-else
-            type="primary"
+            v-else"
             text="Sign in"
             @click="loginUser()"
           />
@@ -37,7 +36,7 @@ import ActionButton from "@/components/ActionButton.vue";
 import ProfileImage from "@/components/ProfileImage.vue";
 
 export default {
-  name: "MainNav  ",
+  name: "MainNav",
   components: {
     ActionButton,
     ProfileImage,
