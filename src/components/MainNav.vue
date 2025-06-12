@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full text-sm">
+  <header :class=" ['w-full', 'ext-sm', headerHeightClass]">
     <div class="fixed top-0 left-0 h-16 w-full bg-white">
       <div
         class="flex flex-nowrap h-full border-b border-solid border-brand-gray-1 px-8 mx-0"
@@ -49,6 +49,11 @@ export default {
       menuItems: ["Teams", "Jobs", "Location", "Benefits", "Students"],
       loggedIn: false,
     };
+  },
+  computed: {
+    headerHeightClass(){
+      return { "h-16": !this.loggedIn, "h-32": this.loggedIn };
+    }
   },
   methods: {
     loginUser() {
