@@ -1,13 +1,10 @@
-<script setup>
-import MainNav from "./components/MainNav.vue";
-</script>
 <template>
   <MainNav />
-  <TheHero/>
+  <TheHero />
 </template>
 <script>
-import MainNav from "./components/MainNav.vue";
-import TheHero from "./components/TheHero.vue";
+import MainNav from "./components/Navigation/MainNav.vue";
+import TheHero from "./components/JobSearch/TheHero.vue";
 
 export default {
   name: "App",
@@ -16,11 +13,10 @@ export default {
     TheHero,
   },
 };
-
 </script>
 
 <style scoped>
- h1 {
+h1 {
   color: purple !important;
- }
+}
 </style>
