@@ -1,12 +1,11 @@
 <template>
-
-<section>
-  <h1 class="mb-14 text-8xl font-bold tracking-tighter">
-    <span :class="actionClasses">{{ action }}</span> <br />
-    for everyBody</h1>
-  <h2 class="text-3xl font-light">Find your next job at Google corp </h2>
-</section>
-
+  <section>
+    <h1 class="mb-14 text-8xl font-bold tracking-tighter">
+      <span :class="actionClasses">{{ action }}</span> <br />
+      for every one
+    </h1>
+    <h2 class="text-3xl font-light">Find your next job at Google corp</h2>
+  </section>
 </template>
 
 <script>
@@ -18,15 +17,15 @@ export default {
     return {
       action: "Build",
       interval: null,
-    }
+    };
   },
 
   computed: {
     actionClasses() {
       return {
         [this.action.toLocaleLowerCase()]: true,
-      }
-    }
+      };
+    },
   },
   created() {
     this.changeTitle();
@@ -37,12 +36,12 @@ export default {
   methods: {
     changeTitle() {
       setInterval(() => {
-        const actionsArr = ["Build","Create","Design", "Code"];
-       this.action = nextElement(actionsArr, this.action);
-      }, 3000)
-    }
-  }
-}
+        const actionsArr = ["Build", "Create", "Design", "Code"];
+        this.action = nextElement(actionsArr, this.action);
+      }, 3000);
+    },
+  },
+};
 </script>
 
 <style>
@@ -61,5 +60,4 @@ export default {
 .code {
   color: #d93025;
 }
-
 </style>
