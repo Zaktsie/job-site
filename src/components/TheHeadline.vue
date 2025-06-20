@@ -1,23 +1,65 @@
 <template>
 
 <section>
-  <h1>{{ action }} for everyBody</h1>
-  <h2>Find your next job at Google corp </h2>
+  <h1 class="mb-14 text-8xl font-bold tracking-tighter">
+    <span :class="actionClasses">{{ action }}</span> <br />
+    for everyBody</h1>
+  <h2 class="text-3xl font-light">Find your next job at Google corp </h2>
 </section>
 
 </template>
 
 <script>
+import nextElement from "@/util/nextElement.js";
+
 export default {
   name: "TheHeadline",
   data() {
     return {
-      action: "Hello",
+      action: "Build",
+      interval: null,
+    }
+  },
+
+  computed: {
+    actionClasses() {
+      return {
+        [this.action.toLocaleLowerCase()]: true,
+      }
     }
   },
   created() {
-    console.log(this.sample," I have been created")
+    this.changeTitle();
+  },
+  beforeMount() {
+    clearInterval(this.interval);
+  },
+  methods: {
+    changeTitle() {
+      setInterval(() => {
+        const actionsArr = ["Build","Create","Design", "Code"];
+       this.action = nextElement(actionsArr, this.action);
+      }, 3000)
+    }
   }
-
 }
 </script>
+
+<style>
+.build {
+  color: #1a73e8;
+}
+
+.design {
+  color: #f9ab00;
+}
+
+.create {
+  color: #34a853;
+}
+
+.code {
+  color: #d93025;
+}
+
+</style>
