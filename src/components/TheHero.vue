@@ -8,7 +8,13 @@
           <the-headline />
           <job-search-form />
         </div>
-        <div class="col-span-5 col-start-7"></div>
+        <div class="col-span-5 col-start-7 self-center justify-self-center">
+          <img
+            class="h-80 w-80 object-contain"
+            src="https://www.gstatic.com/hiring/CportalUi/hero_3_1x.png"
+            alt="right image"
+          />
+        </div>
         <div class="col-span-1 col-start-12"></div>
       </div>
     </section>
