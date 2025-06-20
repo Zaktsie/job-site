@@ -7,11 +7,10 @@
       <div class="relative flex h-full flex-1 items-center pr-3">
         <label class="absolute left-0 -top-10">Role</label>
         <input
+          v-model="role"
           class="w-full text-lg font-normal focus:outline-none"
           placeholder="Web developer"
           type="text"
-          :value="role"
-          @input="role = $event.target.value"
         />
       </div>
       <span
@@ -22,11 +21,10 @@
       <div class="relative flex h-full flex-1 items-center pl-3">
         <label class="absolute left-0 -top-10">Location?</label>
         <input
+          v-model="location"
           class="w-full text-lg font-normal focus:outline-none"
           placeholder="Cape Town"
           type="text"
-          :value="location"
-          @input="location = $event.target.value"
         />
       </div>
     </div>
