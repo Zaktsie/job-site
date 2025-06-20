@@ -1,11 +1,15 @@
 import { render, screen } from "@testing-library/vue";
-import theSubnav from "@/components/TheSubnav.vue";
 import TheSubnav from "@/components/TheSubnav.vue";
 
 describe("The   Subnav", () => {
   describe("when user is on the jobs page", () => {
     it("renders jobs  count", () => {
       render(TheSubnav, {
+        globals: {
+          stubs: {
+            FontAwesomeIcon: true,
+          },
+        },
         data() {
           return {
             onJobResultsPage: true,
@@ -19,6 +23,11 @@ describe("The   Subnav", () => {
   describe("when user is not on the jobs page", () => {
     it("does not renders jobs  count", () => {
       render(TheSubnav, {
+        globals: {
+          stubs: {
+            FontAwesomeIcon: true,
+          },
+        },
         data() {
           return {
             onJobResultsPage: false,
