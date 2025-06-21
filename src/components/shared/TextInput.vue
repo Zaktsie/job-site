@@ -9,16 +9,16 @@
 <script>
 export default {
   name: "TextInput",
-  emits: ["handleInput"],
-  data() {
-    return {
-      value: "",
-    };
+  props: {
+    value: {
+      type: String,
+      required: true,
+    },
   },
+  emits: ["handleInput"],
   methods: {
     handleInput($event) {
-      this.value = $event.target.value;
-      this.$emit("handleInput", this.value);
+      this.$emit("handleInput", $event.target.value);
     },
   },
 };
