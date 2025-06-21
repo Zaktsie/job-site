@@ -5,12 +5,24 @@ import MainNav from "@/components/Navigation/MainNav.vue";
 
 describe("MainNav", () => {
   it("displays company name", () => {
-    render(MainNav);
+    render(MainNav, {
+      globals: {
+        stubs: {
+          FontAwesomeIcon: true,
+        },
+      },
+    });
     const companyName = screen.getByText("Google Careers");
     expect(companyName).toBeInTheDocument();
   });
   it("displays menu items for navigations", () => {
-    render(MainNav);
+    render(MainNav, {
+      globals: {
+        stubs: {
+          FontAwesomeIcon: true,
+        },
+      },
+    });
     const navMenuItems = screen.getAllByRole("listitem");
     const navMenuItemTexts = navMenuItems.map((item) => item.textContent);
     expect(navMenuItemTexts).toEqual([
@@ -25,7 +37,13 @@ describe("MainNav", () => {
 
 describe("user login", () => {
   it("displays user profile picture", async () => {
-    render(MainNav);
+    render(MainNav, {
+      globals: {
+        stubs: {
+          FontAwesomeIcon: true,
+        },
+      },
+    });
 
     let profileImage = screen.queryByRole("img", {
       name: /user profile image/i,
