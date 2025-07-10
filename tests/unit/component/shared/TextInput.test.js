@@ -12,6 +12,6 @@ describe("Testing TextInput Component", () => {
     const input = screen.getByRole("textbox");
     await userEvent.type(input, "Zak");
     const messages = emitted()["update:modelValue"];
-    expect(messages).toEqual([["Z"], ["Za"], ["Zak"]]);
+    expect(messages).toEqual(["Z"], ["Za"], ["Zak"]);
   });
 });
