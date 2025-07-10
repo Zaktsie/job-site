@@ -10,8 +10,8 @@ describe("Testing TextInput Component", () => {
       },
     });
     const input = screen.getByRole("textbox");
-    console.log(emitted);
     await userEvent.type(input, "Zak");
-    console.log(emitted);
+    const messages = emitted()["update:modelValue"];
+    expect(messages).toEqual(["Z"], ["Za"], ["Zak"]);
   });
 });
