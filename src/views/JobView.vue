@@ -1,9 +1,13 @@
 <template>
-  <h1 class="text-6xl font-bold">Job Results Page</h1>
+  <jobs-results-view />
 </template>
 
 <script>
+import JobsResultsView from "@/views/JobsResultsView.vue";
 export default {
   name: "JobView",
+  components: {
+    JobsResultsView,
+  },
 };
 </script>

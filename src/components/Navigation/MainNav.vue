@@ -4,9 +4,11 @@
       <div
         class="flex flex-nowrap h-full border-b border-solid border-brand-gray-1 px-8 mx-0"
       >
-        <a :href="url" class="flex h-full items-center text-xl font-semibold">{{
-          companyName
-        }}</a>
+        <router-link
+          to="/"
+          class="flex h-full items-center text-xl font-semibold"
+          >{{ companyName }}
+        </router-link>
         <nav class="ml-12 h-full">
           <ul class="flex h-full list-none">
             <li
@@ -49,7 +51,6 @@ export default {
   data() {
     return {
       companyName: "Google Careers",
-      url: "https://www.google.com/about/careers/applications/",
       menuItems: [
         { text: "Teams", url: "/" },
         { text: "Jobs", url: "/job/results" },
