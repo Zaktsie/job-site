@@ -5,7 +5,7 @@
         class="flex flex-nowrap h-full border-b border-solid border-brand-gray-1 px-8 mx-0"
       >
         <router-link
-          to="/"
+          :to="{ name: 'Home' }"
           class="flex h-full items-center text-xl font-semibold"
           >{{ companyName }}
         </router-link>
