@@ -11,10 +11,14 @@
           <ul class="flex h-full list-none">
             <li
               v-for="item in menuItems"
-              :key="item"
+              :key="item.text"
               class="h-full ml-9 first:ml-0"
             >
-              <a href="#" class="flex h-full items-center py-2.5">{{ item }}</a>
+              <router-link
+                :to="item.url"
+                class="flex h-full items-center py-2.5"
+                >{{ item.text }}</router-link
+              >
             </li>
           </ul>
         </nav>
@@ -46,7 +50,13 @@ export default {
     return {
       companyName: "Google Careers",
       url: "https://www.google.com/about/careers/applications/",
-      menuItems: ["Teams", "Jobs", "Location", "Benefits", "Students"],
+      menuItems: [
+        { text: "Teams", url: "/" },
+        { text: "Jobs", url: "/job/results" },
+        { text: "Location", url: "/" },
+        { text: "Benefits", url: "/" },
+        { text: "Students", url: "/" },
+      ],
       loggedIn: false,
     };
   },
