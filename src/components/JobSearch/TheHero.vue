@@ -11,7 +11,7 @@
         <div class="col-span-5 col-start-7 self-center justify-self-center">
           <img
             class="h-80 w-80 object-contain"
-            src="https://www.gstatic.com/hiring/CportalUi/hero_3_1x.png"
+            src="https://www.gstatic.com/hiring/CportalUi/hero_1_1x.png"
             alt="right image"
           />
         </div>
