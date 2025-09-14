@@ -1,13 +1,15 @@
 <template>
-  <jobs-results-view />
+  <div>Job Page for job {{ currentJobId }}</div>
 </template>
 
 <script>
-import JobsResultsView from "@/views/JobsResultsView.vue";
 export default {
   name: "JobView",
-  components: {
-    JobsResultsView,
+
+  computed: {
+    currentJobId() {
+      return this.$route.params.id;
+    },
   },
 };
 </script>

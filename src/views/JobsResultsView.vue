@@ -1,15 +1,19 @@
 <template>
-  <h1 class="text-6xl font-bold">Job Results Page</h1>
-  <button @click="goToHome">Go to home</button>
+  <div class="flex flex-row flex-nowrap">
+    <job-filter-sidebar />
+    <JobListings></JobListings>
+  </div>
 </template>
 
 <script>
+import JobFilterSidebar from "../components/JobResults/JobFilterSidebar/JobFilterSideBar.vue";
+import JobListings from "../components/JobResults/JobListings.vue";
+
 export default {
   name: "JobsResultsView",
-  methods: {
-    goToHome() {
-      this.$router.push({ name: "Home" });
-    },
+  components: {
+    JobListings,
+    JobFilterSidebar,
   },
 };
 </script>

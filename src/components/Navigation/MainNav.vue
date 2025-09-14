@@ -46,7 +46,7 @@ export default {
   },
   data() {
     return {
-      companyName: "Google Careers",
+      companyName: "Zak's Careers",
       menuItems: [
         { text: "Teams", url: "/" },
         { text: "Jobs", url: "/job/results" },
