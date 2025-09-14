@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint . --ext .vue,.js,.jsx --fix --ignore-path .gitignore",
+    "backend": "json-server --watch db.json"
   },
   "lint-staged": {
     "*.{js,vue}": [
@@ -21,6 +23,8 @@
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@rushstack/eslint-patch": "^1.11.0",
     "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/test-utils": "^2.4.6",
+    "axios": "^1.12.2",
     "postcss-cli": "^11.0.1",
     "prettier": "^3.5.3",
     "vitest": "^3.0.9",
@@ -42,6 +46,7 @@
     "globals": "^16.2.0",
     "husky": "^9.1.7",
     "jsdom": "^26.0.0",
+    "json-server": "^1.0.0-beta.3",
     "lint-staged": "^16.0.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
