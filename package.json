@@ -10,7 +10,8 @@
     "test:unit": "vitest",
     "prepare": "husky install",
     "lint": "eslint . --ext .vue,.js,.jsx --fix --ignore-path .gitignore",
-    "backend": "json-server --watch db.json"
+    "backend": "json-server --watch db.json",
+    "dev:full": "concurrently -n \"FRONTEND,BACKEND\" -c \"cyan,magenta\" \"npm run dev\" \"npm run backend\""
   },
   "lint-staged": {
     "*.{js,vue}": [
@@ -39,6 +40,7 @@
     "@testing-library/vue": "^8.1.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.1",
     "eslint": "^9.27.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
