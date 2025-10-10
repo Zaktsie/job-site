@@ -26,6 +26,7 @@
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/test-utils": "^2.4.6",
     "axios": "^1.12.2",
+    "pinia": "^3.0.3",
     "postcss-cli": "^11.0.1",
     "prettier": "^3.5.3",
     "vitest": "^3.0.9",
