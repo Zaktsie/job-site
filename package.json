@@ -26,6 +26,7 @@
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/test-utils": "^2.4.6",
     "axios": "^1.12.2",
+    "pinia": "^3.0.3",
     "postcss-cli": "^11.0.1",
     "prettier": "^3.5.3",
     "vitest": "^3.0.9",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.27.1",
     "@eslint/js": "^9.27.0",
+    "@pinia/testing": "^1.0.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/user-event": "^14.6.1",
     "@testing-library/vue": "^8.1.0",
