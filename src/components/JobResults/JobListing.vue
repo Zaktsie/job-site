@@ -4,7 +4,7 @@
       :to="'jobPageLink'"
       class="mw-auto block rounded border border-solid border-brand-gray-2 bg-white hover:shadow-gray"
     >
-      <div class="mw-8 border-b border-solid border-brand-gray-2 pt-5 pb-2">
+      <div class="mw-8 border-b border-solid border-brand-gray-2 px-8 py-4">
         <h2 class="mb-2 text-3xl">
           {{ job.title }}
         </h2>
