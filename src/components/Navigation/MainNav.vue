@@ -26,7 +26,7 @@
         </nav>
 
         <div class="ml-auto flex h-full items-center">
-          <ProfileImage v-if="loggedIn" />
+          <ProfileImage v-if="userStore.isLoggedIn" />
           <ActionButton v-else text="Sign in" @click="loginUser()" />
         </div>
       </div>
@@ -37,6 +37,8 @@
 <script>
 import ActionButton from "@/components/ActionButton.vue";
 import ProfileImage from "@/components/Navigation/ProfileImage.vue";
+import { mapStores } from "pinia";
+import { useUserStore } from "../../stores/user.js";
 
 export default {
   name: "MainNav",
@@ -54,12 +56,15 @@ export default {
         { text: "Benefits", url: "/" },
         { text: "Students", url: "/" },
       ],
-      loggedIn: false,
     };
   },
   computed: {
+    ...mapStores(useUserStore),
     headerHeightClass() {
-      return { "h-16": !this.loggedIn, "h-32": this.loggedIn };
+      return {
+        "h-16": !this.userStore.isLoggedIn,
+        "h-32": this.userStore.isLoggedIn,
+      };
     },
   },
   methods: {
