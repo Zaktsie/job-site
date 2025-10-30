@@ -25,7 +25,7 @@
 
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import actionButton from "@/components/ActionButton.vue";
+import actionButton from "@/components/shared/ActionButton.vue";
 import TextInput from "@/components/shared/TextInput.vue";
 
 export default {
