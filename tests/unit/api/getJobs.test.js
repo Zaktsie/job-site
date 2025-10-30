@@ -1,3 +1,11 @@
+import {
+  describe,
+  it,
+  expect,
+  beforeEach,
+  afterEach,
+  jest,
+} from "@jest/globals";
 import axios from "axios";
 
 import getJobs from "../../../src/api/getJobs.js";

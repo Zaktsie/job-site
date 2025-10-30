@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import ActionButton from "@/components/ActionButton.vue";
+import ActionButton from "@/components/shared/ActionButton.vue";
 import ProfileImage from "@/components/Navigation/ProfileImage.vue";
 import { mapState, mapActions } from "pinia";
 import { useUserStore } from "../../stores/user.js";
