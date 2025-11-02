@@ -4,11 +4,9 @@
       <div
         class="flex flex-nowrap h-full border-b border-solid border-brand-gray-1 px-8 mx-0"
       >
-        <router-link
-          :to="{ name: 'Home' }"
-          class="flex h-full items-center text-xl font-semibold"
-          >{{ companyName }}
-        </router-link>
+        <router-link :to="{ name: 'Home' }" class="flex h-full items-center"
+          ><img :src="logo" alt="Zak's Careers" class="h-8"
+        /></router-link>
         <nav class="ml-12 h-full">
           <ul class="flex h-full list-none">
             <li
@@ -41,6 +39,7 @@ import ProfileImage from "@/components/Navigation/ProfileImage.vue";
 import { mapState, mapActions } from "pinia";
 import { useUserStore } from "../../stores/user.js";
 import TheSubnav from "./TheSubnav.vue";
+import logo from "@/assets/logo.png";
 
 export default {
   name: "MainNav",
@@ -51,9 +50,9 @@ export default {
   },
   data() {
     return {
-      companyName: "Zak's Careers",
+      logo,
       menuItems: [
-        { text: "Teams", url: "/" },
+        { text: "Teams", url: "/teams" },
         { text: "Jobs", url: "/job/results" },
         { text: "Location", url: "/" },
         { text: "Benefits", url: "/" },
