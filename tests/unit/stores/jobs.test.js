@@ -1,32 +1,32 @@
 import { createPinia, setActivePinia } from "pinia";
 import axios from "axios";
 
-import { useJobsStore } from "../../../src/stores/jobs.js";
+import { useJobsStore } from "@/stores/jobs";
 
 vi.mock("axios");
-describe("Jobs state", () => {
+
+describe("state", () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
 
-  it("should store job listings", () => {
+  it("stores job listings", () => {
     const store = useJobsStore();
     expect(store.jobs).toEqual([]);
   });
 });
 
-describe("Jobs actions", () => {
+describe("actions", () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
 
-  describe("FETCH_JOBS"),
-    () => {
-      it("makes API requests and stores received jobs", async () => {
-        axios.get.mockResolvedValue({ data: ["job 1", "job 2"] });
-        const store = useJobsStore();
-        await store.FETCH_JOBS();
-        expect(store.jobs).toEqual(["job 1", "job 2"]);
-      });
-    };
+  describe("FETCH_JOBS", () => {
+    it("makes API request and stores received jobs", async () => {
+      axios.get.mockResolvedValue({ data: ["Job 1", "Job 2"] });
+      const store = useJobsStore();
+      await store.FETCH_JOBS();
+      expect(store.jobs).toEqual(["Job 1", "Job 2"]);
+    });
+  });
 });

@@ -6,6 +6,7 @@
     @input="handleInput"
   />
 </template>
+
 <script>
 export default {
   name: "TextInput",
