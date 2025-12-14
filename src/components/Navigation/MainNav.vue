@@ -1,8 +1,8 @@
 <template>
-  <header :class="['w-full', 'ext-sm', headerHeightClass]">
-    <div class="fixed top-0 left-0 h-16 w-full bg-white">
+  <header :class="['w-full', 'text-sm', headerHeightClass]">
+    <div class="fixed left-0 top-0 h-16 w-full bg-white">
       <div
-        class="flex flex-nowrap h-full border-b border-solid border-brand-gray-1 px-8 mx-0"
+        class="mx-auto flex h-full flex-nowrap border-b border-solid border-brand-gray-1 px-8"
       >
         <router-link :to="{ name: 'Home' }" class="flex h-full items-center"
           ><img :src="logo" alt="Zak's Careers" class="h-8"
@@ -10,53 +10,56 @@
         <nav class="ml-12 h-full">
           <ul class="flex h-full list-none">
             <li
-              v-for="item in menuItems"
-              :key="item.text"
-              class="h-full ml-9 first:ml-0"
+              v-for="menuItem in menuItems"
+              :key="menuItem.text"
+              class="ml-9 h-full first:ml-0"
             >
               <router-link
-                :to="item.url"
+                :to="menuItem.url"
                 class="flex h-full items-center py-2.5"
-                >{{ item.text }}</router-link
+                >{{ menuItem.text }}</router-link
               >
             </li>
           </ul>
         </nav>
 
         <div class="ml-auto flex h-full items-center">
-          <ProfileImage v-if="isLoggedIn" />
-          <ActionButton v-else text="Sign in" @click="loginUser" />
+          <profile-image v-if="isLoggedIn" />
+          <action-button v-else text="Sign in" @click="loginUser" />
         </div>
       </div>
-      <TheSubnav v-if="isLoggedIn" />
+
+      <the-subnav v-if="isLoggedIn" />
     </div>
   </header>
 </template>
 
 <script>
-import ActionButton from "@/components/shared/ActionButton.vue";
-import ProfileImage from "@/components/Navigation/ProfileImage.vue";
-import { mapState, mapActions } from "pinia";
-import { useUserStore } from "../../stores/user.js";
-import TheSubnav from "./TheSubnav.vue";
-import logo from "@/assets/logo.png";
+import { mapActions, mapState } from "pinia";
 
+import { useUserStore } from "@/stores/user";
+
+import ActionButton from "@/components/Shared/ActionButton.vue";
+import ProfileImage from "@/components/Navigation/ProfileImage.vue";
+import TheSubnav from "@/components/Navigation/TheSubnav.vue";
+import logo from "@/assets/logo.png";
 export default {
   name: "MainNav",
   components: {
-    TheSubnav,
     ActionButton,
     ProfileImage,
+    TheSubnav,
   },
   data() {
     return {
       logo,
       menuItems: [
         { text: "Teams", url: "/teams" },
-        { text: "Jobs", url: "/job/results" },
-        { text: "Location", url: "/" },
-        { text: "Benefits", url: "/" },
+        { text: "Locations", url: "/" },
+        { text: "Life at Zak careers", url: "/" },
+        { text: "How we hire", url: "/" },
         { text: "Students", url: "/" },
+        { text: "Jobs", url: "/jobs/results" },
       ],
     };
   },

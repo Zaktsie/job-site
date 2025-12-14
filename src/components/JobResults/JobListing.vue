@@ -1,11 +1,11 @@
 <template>
   <li class="mb-7">
     <router-link
-      :to="'jobPageLink'"
-      class="mw-auto block rounded border border-solid border-brand-gray-2 bg-white hover:shadow-gray"
+      :to="jobPageLink"
+      class="mx-auto block rounded border border-solid border-brand-gray-2 bg-white hover:shadow-gray"
     >
-      <div class="mw-8 border-b border-solid border-brand-gray-2 px-8 py-4">
-        <h2 class="mb-2 text-3xl">
+      <div class="mx-8 border-b border-solid border-brand-gray-2 pb-2 pt-5">
+        <h2 class="mb-2 text-2xl">
           {{ job.title }}
         </h2>
 
@@ -13,6 +13,7 @@
           <div class="mr-5">
             <span>{{ job.organization }}</span>
           </div>
+
           <div>
             <ul>
               <li
@@ -29,7 +30,7 @@
 
       <div class="px-8 py-4">
         <div>
-          <h3 class="mt-1 mb-2">Qualifications</h3>
+          <h3 class="mb-2 mt-1">Qualifications:</h3>
           <div>
             <ul class="list-disc pl-8">
               <li
@@ -41,13 +42,17 @@
             </ul>
           </div>
         </div>
-        <div class="mt-2 text-center text-brand-blue-2">
-          <router-link :to="'jobPageLink'">Expand</router-link>
+
+        <div class="mt-2 text-center">
+          <router-link :to="jobPageLink" class="text-brand-blue-1"
+            >Expand</router-link
+          >
         </div>
       </div>
     </router-link>
   </li>
 </template>
+
 <script>
 export default {
   name: "JobListing",
@@ -64,5 +69,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>

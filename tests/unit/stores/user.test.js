@@ -1,24 +1,25 @@
 import { createPinia, setActivePinia } from "pinia";
 
-import { useUserStore } from "../../../src/stores/user.js";
+import { useUserStore } from "@/stores/user";
 
-describe("User State", () => {
+describe("state", () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
-  it("should return the user state", async () => {
+
+  it("keeps track of if user is logged in", () => {
     const store = useUserStore();
     expect(store.isLoggedIn).toBe(false);
   });
 });
 
-describe("User Actions", () => {
+describe("actions", () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
 
-  describe("LoginUser", () => {
-    it("when the user logs in", async () => {
+  describe("loginUser", () => {
+    it("logs the user in", () => {
       const store = useUserStore();
       store.loginUser();
       expect(store.isLoggedIn).toBe(true);

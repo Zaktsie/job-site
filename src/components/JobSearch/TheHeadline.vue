@@ -1,15 +1,16 @@
 <template>
   <section class="mb-16">
     <h1 class="mb-14 text-8xl font-bold tracking-tighter">
-      <span :class="actionClasses">{{ action }}</span> <br />
-      for every one
+      <span :class="actionClasses">{{ action }}</span>
+      <br />
+      for everyone
     </h1>
-    <h2 class="text-3xl font-light">Find your next job at Google corp</h2>
+    <h2 class="text-3xl font-light">Find your next job at Zak's careers.</h2>
   </section>
 </template>
 
 <script>
-import nextElement from "@/util/nextElement.js";
+import nextElementInList from "@/utils/nextElementInList";
 
 export default {
   name: "TheHeadline",
@@ -19,42 +20,41 @@ export default {
       interval: null,
     };
   },
-
   computed: {
     actionClasses() {
       return {
-        [this.action.toLocaleLowerCase()]: true,
+        [this.action.toLowerCase()]: true,
       };
     },
   },
   created() {
     this.changeTitle();
   },
-  beforeMount() {
+  beforeUnmount() {
     clearInterval(this.interval);
   },
   methods: {
     changeTitle() {
-      setInterval(() => {
-        const actionsArr = ["Build", "Create", "Design", "Code"];
-        this.action = nextElement(actionsArr, this.action);
+      this.interval = setInterval(() => {
+        const actions = ["Build", "Create", "Design", "Code"];
+        this.action = nextElementInList(actions, this.action);
       }, 3000);
     },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .build {
   color: #1a73e8;
 }
 
-.design {
-  color: #f9ab00;
-}
-
 .create {
   color: #34a853;
+}
+
+.design {
+  color: #f9ab00;
 }
 
 .code {
