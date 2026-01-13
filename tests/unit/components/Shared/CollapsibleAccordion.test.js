@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/vue";
 import userEvent from "@testing-library/user-event";
 
-import CollapsibleAccordion from "@/components/Shared/CollapsibleAccordion.vue";
+import CollapsibleAccordion from "@/components/shared/CollapsibleAccordion.vue";
 
 describe("CollapsibleAccordion", () => {
   const renderCollapsibleAccordion = (config = {}) => {

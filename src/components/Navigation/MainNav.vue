@@ -39,7 +39,7 @@ import { mapActions, mapState } from "pinia";
 
 import { useUserStore } from "@/stores/user";
 
-import ActionButton from "@/components/Shared/ActionButton.vue";
+import ActionButton from "@/components/shared/ActionButton.vue";
 import ProfileImage from "@/components/Navigation/ProfileImage.vue";
 import TheSubnav from "@/components/Navigation/TheSubnav.vue";
 import logo from "@/assets/logo.png";

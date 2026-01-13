@@ -22,7 +22,7 @@
         <text-input
           id="location"
           v-model="location"
-          placeholder="Los Angeles"
+          placeholder="Cape Town"
         />
       </div>
     </div>
@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import ActionButton from "@/components/Shared/ActionButton.vue";
-import TextInput from "@/components/Shared/TextInput.vue";
+import ActionButton from "@/components/shared/ActionButton.vue";
+import TextInput from "@/components/shared/TextInput.vue";
 
 export default {
   name: "JobSearchForm",

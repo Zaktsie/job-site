@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import CollapsibleAccordion from "@/components/Shared/CollapsibleAccordion.vue";
+import CollapsibleAccordion from "@/components/shared/CollapsibleAccordion.vue";
 
 export default {
   name: "JobFiltersSidebarOrganizations",

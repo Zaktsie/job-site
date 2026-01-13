@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import ActionButton from "@/components/Shared/ActionButton.vue";
-import CollapsibleAccordion from "@/components/Shared/CollapsibleAccordion.vue";
+import ActionButton from "@/components/shared/ActionButton.vue";
+import CollapsibleAccordion from "@/components/shared/CollapsibleAccordion.vue";
 import JobFiltersSidebarOrganizations from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarOrganizations.vue";
 
 export default {

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import HeaderContainer from "@/components/Shared/HeaderContainer.vue";
+import HeaderContainer from "@/components/shared/headerContainer.vue";
 
 export default {
   name: "TeamsView",
