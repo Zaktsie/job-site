@@ -55,10 +55,10 @@ export default {
       logo,
       menuItems: [
         { text: "Teams", url: "/teams" },
-        { text: "Locations", url: "/" },
+        { text: "Locations", url: "/locations" },
         { text: "Life at Zak careers", url: "/" },
-        { text: "How we hire", url: "/" },
-        { text: "Students", url: "/" },
+        { text: "How we hire", url: "/hire" },
+        { text: "Students", url: "/students" },
         { text: "Jobs", url: "/jobs/results" },
       ],
     };

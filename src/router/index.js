@@ -4,6 +4,9 @@ import HomeView from "@/views/HomeView.vue";
 import JobResultsView from "@/views/JobResultsView.vue";
 import JobView from "@/views/JobView.vue";
 import TeamsView from "@/views/TeamsView.vue";
+import LocationView from "@/views/LocationView.vue";
+import StudentView from "@/views/StudentView.vue";
+import HiringView from "@/views/HiringView.vue";
 
 const routes = [
   {
@@ -25,6 +28,21 @@ const routes = [
     path: "/teams",
     name: "Teams",
     component: TeamsView,
+  },
+  {
+    path: "/students",
+    name: "students",
+    component: StudentView,
+  },
+  {
+    path: "/locations",
+    name: "locations",
+    component: LocationView,
+  },
+  {
+    path: "/hire",
+    name: "hire",
+    component: HiringView,
   },
 ];
 
