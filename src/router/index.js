@@ -7,6 +7,7 @@ import TeamsView from "@/views/TeamsView.vue";
 import LocationView from "@/views/LocationView.vue";
 import StudentView from "@/views/StudentView.vue";
 import HiringView from "@/views/HiringView.vue";
+import ProfileView from "@/views/ProfileView.vue";
 
 const routes = [
   {
@@ -43,6 +44,11 @@ const routes = [
     path: "/hire",
     name: "hire",
     component: HiringView,
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: ProfileView,
   },
 ];
 

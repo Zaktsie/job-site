@@ -6,14 +6,18 @@
   />
 </template>
 
-<script>
-export default {
-  name: "ProfileImage",
-  data() {
-    return {
-      imageLink:
-        "https://www.pngitem.com/pimgs/m/487-4876417_link-head-png-toon-link-face-png-transparent.png",
-    };
-  },
-};
+<script setup>
+import { computed } from "vue";
+import { getActivePinia } from "pinia";
+
+import { useUserStore } from "@/stores/user";
+
+const defaultAvatar =
+  "https://www.pngitem.com/pimgs/m/487-4876417_link-head-png-toon-link-face-png-transparent.png";
+
+const userStore = getActivePinia() ? useUserStore() : null;
+
+const imageLink = computed(
+  () => userStore?.userProfile?.avatarUrl || defaultAvatar
+);
 </script>
