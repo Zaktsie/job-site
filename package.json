@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "test:unit": "vitest",
     "prepare": "husky install",
-    "lint": "eslint . --ext .vue,.js,.jsx --fix --ignore-path .gitignore",
+    "lint": "eslint . --fix",
     "backend": "json-server --watch db.json",
     "dev:full": "concurrently -n \"FRONTEND,BACKEND\" -c \"cyan,magenta\" \"npm run dev\" \"npm run backend\""
   },

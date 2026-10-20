@@ -30,7 +30,7 @@ describe("MainNav", () => {
 
   it("displays company name", () => {
     renderMainNav();
-    const companyName = screen.getByText("Bobo Careers");
+    const companyName = screen.getByText("Zak's Careers");
     expect(companyName).toBeInTheDocument();
   });
 
@@ -43,7 +43,7 @@ describe("MainNav", () => {
     expect(navigationMenuTexts).toEqual([
       "Teams",
       "Locations",
-      "Life at Bobo Corp",
+      "Life at Zak careers",
       "How we hire",
       "Students",
       "Jobs",

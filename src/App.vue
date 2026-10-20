@@ -1,20 +1,10 @@
 <template>
-  <main-nav />
+  <MainNav />
   <router-view />
+  <TheFooter />
 </template>
-<script>
+
+<script setup>
 import MainNav from "@/components/Navigation/MainNav.vue";
-
-export default {
-  name: "App",
-  components: {
-    MainNav,
-  },
-};
+import TheFooter from "@/components/Navigation/TheFooter.vue";
 </script>
-
-<style scoped>
-h1 {
-  color: purple !important;
-}
-</style>

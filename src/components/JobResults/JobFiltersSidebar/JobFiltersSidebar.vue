@@ -3,35 +3,62 @@
     class="flex w-96 flex-col border-r border-solid border-brand-gray-1 bg-white p-4"
   >
     <section class="pb-5">
-      <div class="flex flex-row justify-between">
-        <h3 class="my-4 text-base font-semibold">What do you want to do?</h3>
-        <div class="flex items-center text-sm">
-          <action-button text="Clear Filters" type="secondary" />
-        </div>
-      </div>
+      <JobFiltersSidebarPrompt />
+      <JobFiltersSidebarSkills />
 
-      <collapsible-accordion header="Degree" />
-
-      <collapsible-accordion header="Job types">
-        <p>Placeholder for now</p>
-      </collapsible-accordion>
-
-      <job-filters-sidebar-organizations />
+      <JobFiltersSidebarDegrees />
+      <JobFiltersSidebarJobTypes />
+      <JobFiltersSidebarOrganizations />
+      <JobFiltersSidebarLocations />
     </section>
   </div>
 </template>
 
-<script>
-import ActionButton from "@/components/shared/ActionButton.vue";
-import CollapsibleAccordion from "@/components/shared/CollapsibleAccordion.vue";
-import JobFiltersSidebarOrganizations from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarOrganizations.vue";
+<script setup>
+import { getCurrentInstance, onMounted } from "vue";
 
-export default {
-  name: "JobFiltersSidebar",
-  components: {
-    ActionButton,
-    CollapsibleAccordion,
-    JobFiltersSidebarOrganizations,
-  },
+import JobFiltersSidebarDegrees from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarDegrees.vue";
+import JobFiltersSidebarJobTypes from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarJobTypes.vue";
+import JobFiltersSidebarLocations from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarLocations.vue";
+import JobFiltersSidebarOrganizations from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarOrganizations.vue";
+import JobFiltersSidebarPrompt from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarPrompt.vue";
+import JobFiltersSidebarSkills from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarSkills.vue";
+import { useUserStore } from "@/stores/user";
+
+const instance = getCurrentInstance();
+const userStore = useUserStore();
+
+const parseQueryFilters = () => {
+  const route = instance?.proxy?.$route;
+  if (!route?.query) return;
+
+  const role = route.query.role || "";
+  if (role) {
+    userStore.UPDATE_SKILLS_SEARCH_TERM(role);
+  }
+  const location = route.query.location || "";
+  if (location) {
+    userStore.UPDATE_LOCATION_SEARCH_TERM(location);
+  }
+  const organization = route.query.organization;
+  if (organization) {
+    const orgs = Array.isArray(organization) ? organization : [organization];
+    userStore.ADD_SELECTED_ORGANIZATIONS(orgs);
+  }
+  const jobType = route.query.jobType;
+  if (jobType) {
+    const types = Array.isArray(jobType) ? jobType : [jobType];
+    userStore.ADD_SELECTED_JOB_TYPES(types);
+  }
+  const degree = route.query.degree;
+  if (degree) {
+    const degrees = Array.isArray(degree) ? degree : [degree];
+    userStore.ADD_SELECTED_DEGREES(degrees);
+  }
+  if (route.query.saved === "true") {
+    userStore.SET_ONLY_SAVED_JOBS(true);
+  }
 };
+
+onMounted(parseQueryFilters);
 </script>
